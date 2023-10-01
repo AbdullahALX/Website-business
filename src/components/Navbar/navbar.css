@@ -1,0 +1,151 @@
+.navbar {
+  height: 6rem;
+  width: 100vw;
+  max-width: 100rem;
+  padding: 1rem 1rem;
+  padding-left: 12.5rem;
+  padding-right: 12.5rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #dbdbdb;
+  /* border-bottom: 1px solid #000; */
+}
+
+.logo {
+  cursor: pointer;
+  object-fit: contain;
+  height: 6rem;
+  width: 13rem;
+  padding: 0.5rem;
+  margin-right: -4rem;
+  filter: sepia(100%) saturate(50%) brightness(10%) hue-rotate(10000deg);
+}
+.navLinkItem {
+  margin: 2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #000;
+}
+
+.navLinkItem:hover {
+  color: #72655c;
+  padding-bottom: 0.5rem;
+  /* border-bottom: 4px solid #7e74f1; */
+}
+
+.navContactMeImg {
+  object-fit: contain;
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-left: 0.4rem;
+}
+
+.contactNavButton {
+  background-color: #f8f8fe;
+  color: #17152b;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  display: flex;
+  font-size: 1rem;
+  border: 1px solid #000;
+  margin-right: 2rem;
+
+  font-weight: 500;
+}
+
+.contactNavButton:hover {
+  background-color: #72655c7f;
+}
+
+.contactNavButton:active {
+  transform: scale(0.95);
+  transition: 10ms;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .resDiv {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    position: fixed;
+    top: -5px;
+    left: 0;
+  }
+  .contactNavButton {
+    display: none;
+  }
+  .navLinks {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #d7d7d7;
+    left: 0;
+    width: 100%;
+    transform: translateX(-100%);
+  }
+  .nav-toggle {
+    display: flex;
+    position: fixed;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0 auto;
+  }
+  .openLink {
+    transform: translateX(0);
+  }
+
+  .bar {
+    position: relative;
+    width: 32px;
+    height: 2px;
+    transition: all 0.3s ease;
+    background-color: #72655c;
+  }
+  .bar::before,
+  .bar::after {
+    content: ' ';
+    height: 2px;
+    position: absolute;
+    background-color: #72655c;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .bar::before {
+    width: 32px;
+    transform: translateY(-8px);
+    right: 0;
+  }
+
+  .bar::after {
+    width: 32px;
+    transform: translateY(8px);
+  }
+  .openToggle > .bar {
+    transform: translateX(-40px);
+    background-color: transparent;
+  }
+  .openToggle > .bar::before {
+    width: 32px;
+    transform: rotate(45deg) translate(26px, -26px);
+  }
+  .openToggle > .bar::after {
+    transform: rotate(-45deg) translate(26px, 26px);
+  }
+}
